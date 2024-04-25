@@ -36,13 +36,11 @@ while action !=3:
         for ir in reversed(range(len(garden2d))):
             if garden2d[ir][idx] == '.':
                 garden2d[ir][idx] = 'v' 
-                print (garden2d[ir][idx])
                 break
     elif action  == 2:
         idx = int(input("Where: "))
         for ir in range(len(garden2d)):
             if garden2d[ir][idx] == 'v':
                 garden2d[ir][idx] = '.' 
-                print (garden2d[ir][idx])
                 break
 print()    
