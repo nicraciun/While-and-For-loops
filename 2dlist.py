@@ -12,7 +12,7 @@ garden2d = [
 ]
 
 action = 0 
-
+note = ''
 print()
 while action !=3:
     system ("cls")
@@ -27,7 +27,7 @@ while action !=3:
         print()
      
     plants = count*100/plants
-    print()
+    print(note)
     print(f"Fruit:{plants:3.0f}%")
     print ("ACTION:\n1. watering\n2. collect\n3. exit")
     action = int(input("> "))
@@ -36,11 +36,17 @@ while action !=3:
         for ir in reversed(range(len(garden2d))):
             if garden2d[ir][idx] == '.':
                 garden2d[ir][idx] = 'v' 
+                note = ''
                 break
+            else: 
+                note = 'The growth limit on position '+str(idx)+' has been exhausted'     
     elif action  == 2:
         idx = int(input("Where: "))
         for ir in range(len(garden2d)):
             if garden2d[ir][idx] == 'v':
-                garden2d[ir][idx] = '.' 
+                garden2d[ir][idx] = '.'
+                note ='' 
                 break
+            else:
+                note = 'There are no more fruits in the position '+str(idx)   
 print()    
